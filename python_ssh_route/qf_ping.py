@@ -6,7 +6,7 @@ def qyt_ping(host):
     ip = IP(dst=host)
     icmp = ICMP()
     # 发送数据包并接收回复
-    reply = sr1(ip/icmp, timeout=1, verbose=0)
+    reply = sr1(ip/icmp, timeout=1, verbose=1)
     if reply:
         # print(f"Reply from {host}: bytes={len(reply)} time={reply.time}ms")
         return reply

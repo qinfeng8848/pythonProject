@@ -10,11 +10,11 @@ def query_student_by_name(name):
 
 
 def query_students_by_homework_count(homework_count):
-    return session.query(UserHomework).filter(UserHomework.homework_account == homework_count).all()
+    return session.query(UserHomework).filter(UserHomework.homework_account > homework_count).all()
 
 
 def query_students_by_age(age):
-    return session.query(UserHomework).filter(UserHomework.age == age).all()
+    return session.query(UserHomework).filter(UserHomework.age > age).all()
 
 
 def query_latest_updates():

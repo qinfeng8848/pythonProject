@@ -6,6 +6,8 @@ from sqlalchemy.orm import sessionmaker
 
 # 初始化数据库连接
 engine = create_engine('sqlite:///sqlalchemy_sqlite3.db?check_same_thread=False', echo=False)
+# True 会显示日志信息，帮助调试
+# engine = create_engine('sqlite:///sqlalchemy_sqlite3.db?check_same_thread=False', echo=True)
 
 Base = declarative_base()
 

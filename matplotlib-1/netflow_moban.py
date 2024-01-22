@@ -1,45 +1,47 @@
 #!/usr/bin/env python3
-# -*- coding:utf-8 -*-
+# -*- coding=utf-8 -*-
 
-# 安装matplotlib库的特定版本
+# pip3 install matplotlib==3.5.3
 from matplotlib import pyplot as plt
 
-# 定义一个函数，用于生成饼图
 def mat_bing(name_list, count_list, bing_name):
-    # 设置中文字体，以便饼图可以显示中文
-    plt.rcParams['font.sans-serif'] = ['SimHei']
-    plt.rcParams['axes.unicode_minus'] = False
-
-    # 创建一个图表对象，并设置图表的大小
+    # 饼状图参数
+    plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置黑体
+    plt.rcParams['font.family'] = 'sans-serif'
     plt.figure(figsize=(6, 6))
 
-    # 调用plt.pie()函数生成饼图，输入参数为计数列表和名称列表
-    # 并设置标签的距离、自动百分比显示格式、阴影效果、起始角度和占比数字的距离
+    # 如果count_list的和小于100%，会自动加一个'空'部分
+    # 如果name_list为空，可以自动标注为'空'
     patches, l_text, p_text = plt.pie(count_list,
                                       labels=name_list,
-                                      labeldistance=1.2,
+                                      labeldistance=1.1,
                                       autopct='%3.1f%%',
                                       shadow=False,
                                       startangle=90,
                                       pctdistance=0.6)
 
-    # 自定义饼图的样式设置，包括标签距离、自动百分比、阴影、起始角度和占比数字的距离
-    for t in l_text:
-        t.set_size(30)
-    for t in p_text:
-        t.set_size(30)
+    # labeldistance, 文字的位置离远点有多远，1.1指1.1倍半径的位置
+    # autopct, 饼里面的文本格式，%3.1f%%表示小数有三位，整数有一位的浮点数
+    # shadow, 饼是否有阴影
+    # startangle, 起始角度，0，表示从0开始逆时针转，为第一块。一般选择从90度开始
+    # pctdistance, 与labeldistance相似，但是引出的线的长度
 
-    # 设置坐标轴比例相等，确保饼图为圆形
+    # 改变文本的大小
+    # 方法是把每一个文本遍历。调用set_size方法设置它的属性
+    for t in l_text:
+        t.set_size = 30
+    for t in p_text:
+        t.set_size = 30
+    # 设置x，y轴刻度一致，这样饼图才能是圆的
     plt.axis('equal')
-    # 设置图表标题
-    plt.title(bing_name)
-    # 显示图例
+    plt.title(bing_name)  # 标题
     plt.legend()
 
-    # 显示图表
+    # 保存到图片
+    # plt.savefig('result1.png')
+
+    # 显示图形
     plt.show()
 
-# 这是主程序入口，如果直接运行这个文件，会调用mat_bing函数生成饼图
-if __name__ == '__main__':
-    # 调用函数，传入名称列表、计数列表和饼图的名称
-    mat_bing(['名称1', '名称2', '名称3'], [1000, 123, 444], '我的测试饼图')
+if __name__ == "__main__":
+    mat_bing(['项目1', '项目2', '项目3', '项目4'], [1000, 123, 444, 888], '项目统计')

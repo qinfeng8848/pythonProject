@@ -48,7 +48,7 @@ if __name__ == "__main__":
     # 使用Linux解释器 & WIN解释器
 
     # ip地址与snmp community字符串
-    ip_address = "192.168.124.100"
+    ip_address = "192.168.124.200"
     community = "tcpipro"
 
     # 虽然count=25,但是脚本会自动过滤只显示主ID内的内容

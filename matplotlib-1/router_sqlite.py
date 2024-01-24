@@ -18,6 +18,7 @@ engine = create_engine(f'sqlite:///{db_file_name}?check_same_thread=False')
 
 Base = declarative_base()
 
+
 # 路由器监控数据表格，记录CPU、内存
 class RouterMonitor(Base):
     __tablename__ = 'router_monitor'
@@ -28,13 +29,14 @@ class RouterMonitor(Base):
     mem_use = Column(Integer, nullable=False)  # 使用内存字节数
     mem_free = Column(Integer, nullable=False)  # 剩余内存字节数
     record_datetime = Column(DateTime(timezone='Asia/Chongqing'), default=datetime.datetime.now)
-
     def __repr__(self):
         return f"<{self.__class__.__name__}(Router: {self.device_ip} " \
                f" Datetime: {self.record_datetime} " \
                f" CPU_Usage_Percent: {self.cpu_usage_percent} " \
                f" MEM Use: {self.mem_use} " \
                f" MEM Free: {self.mem_free})>"
+
+Base.metadata.create_all(engine, checkfirst=True)
 
 if __name__ == '__main__':
     # checkfirst=True, 表示在创建表格前会检查这个表格是否存在，如果不存在则创建新的表格，此参数默认就是True

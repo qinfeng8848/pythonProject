@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="root@192.168.124.219:22 password (3)" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="root@192.168.124.219:22 password (8)" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="root@192.168.123.219:22 password">
         <serverdata>
@@ -48,6 +48,34 @@
         <serverdata>
           <mappings>
             <mapping deploy="/tmp/python2024" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@192.168.124.219:22 password (5)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/wode" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@192.168.124.219:22 password (6)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/pycharm_project_937" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@192.168.124.219:22 password (7)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/wode" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@192.168.124.219:22 password (8)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/pythonProject" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>

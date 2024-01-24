@@ -44,12 +44,13 @@ def snmpv2_get(ip, community, oid, port=161):
 
 
 if __name__ == "__main__":
+
     # pyasn1==0.4.8
     # pysnmp==4.4.12
     # 使用Linux解释器 & WIN解释器
 
-    # ip地址与snmp community字符串
-    ip_address = "192.168.124.100"
+    # # ip地址与snmp community字符串
+    ip_address = "192.168.124.200"
     community = "tcpipro"
 
     # 系统描述

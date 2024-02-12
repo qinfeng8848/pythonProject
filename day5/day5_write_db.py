@@ -2,9 +2,13 @@
 # -*- coding=utf-8 -*-
 
 import sys
-sys.path.extend(['/PythonProject/'])
+import os
+# sys.path.extend(['/PythonProject/'])
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_dir not in sys.path:
+    sys.path.append(project_dir)
 
-from snmpv2_getall import snmpv2_getall
+from day5.snmpv2_getall import snmpv2_getall
 import datetime
 from influxdb import InfluxDBClient
 
